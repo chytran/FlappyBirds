@@ -34,7 +34,7 @@
             this.PipeBottom = new System.Windows.Forms.PictureBox();
             this.ground = new System.Windows.Forms.PictureBox();
             this.Bird = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PipeBottom)).BeginInit();
@@ -83,18 +83,19 @@
             this.Bird.TabStop = false;
             this.Bird.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // label1
+            // scoreText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 37);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Score: 0";
+            this.scoreText.AutoSize = true;
+            this.scoreText.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.Location = new System.Drawing.Point(5, 12);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(116, 37);
+            this.scoreText.TabIndex = 4;
+            this.scoreText.Text = "Score: 0";
             // 
             // gameTimer
             // 
+            this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
             // 
@@ -104,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(573, 628);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.scoreText);
             this.Controls.Add(this.Bird);
             this.Controls.Add(this.ground);
             this.Controls.Add(this.PipeBottom);
@@ -128,7 +129,7 @@
         private System.Windows.Forms.PictureBox PipeBottom;
         private System.Windows.Forms.PictureBox ground;
         private System.Windows.Forms.PictureBox Bird;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label scoreText;
         private System.Windows.Forms.Timer gameTimer;
     }
 }
