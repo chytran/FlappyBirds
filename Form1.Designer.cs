@@ -55,7 +55,7 @@
             // PipeBottom
             // 
             this.PipeBottom.Image = ((System.Drawing.Image)(resources.GetObject("PipeBottom.Image")));
-            this.PipeBottom.Location = new System.Drawing.Point(376, 357);
+            this.PipeBottom.Location = new System.Drawing.Point(424, 350);
             this.PipeBottom.Name = "PipeBottom";
             this.PipeBottom.Size = new System.Drawing.Size(100, 203);
             this.PipeBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,7 +66,7 @@
             // ground
             // 
             this.ground.Image = ((System.Drawing.Image)(resources.GetObject("ground.Image")));
-            this.ground.Location = new System.Drawing.Point(-1, 556);
+            this.ground.Location = new System.Drawing.Point(-1, 550);
             this.ground.Name = "ground";
             this.ground.Size = new System.Drawing.Size(575, 74);
             this.ground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -76,9 +76,9 @@
             // Bird
             // 
             this.Bird.Image = ((System.Drawing.Image)(resources.GetObject("Bird.Image")));
-            this.Bird.Location = new System.Drawing.Point(135, 206);
+            this.Bird.Location = new System.Drawing.Point(19, 135);
             this.Bird.Name = "Bird";
-            this.Bird.Size = new System.Drawing.Size(114, 73);
+            this.Bird.Size = new System.Drawing.Size(76, 58);
             this.Bird.TabIndex = 3;
             this.Bird.TabStop = false;
             this.Bird.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -87,11 +87,12 @@
             // 
             this.scoreText.AutoSize = true;
             this.scoreText.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreText.Location = new System.Drawing.Point(5, 12);
+            this.scoreText.Location = new System.Drawing.Point(51, 572);
             this.scoreText.Name = "scoreText";
             this.scoreText.Size = new System.Drawing.Size(116, 37);
             this.scoreText.TabIndex = 4;
             this.scoreText.Text = "Score: 0";
+            this.scoreText.Click += new System.EventHandler(this.scoreText_Click);
             // 
             // gameTimer
             // 
@@ -105,11 +106,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(573, 628);
-            this.Controls.Add(this.scoreText);
             this.Controls.Add(this.Bird);
-            this.Controls.Add(this.ground);
             this.Controls.Add(this.PipeBottom);
             this.Controls.Add(this.PipeTop);
+            this.Controls.Add(this.scoreText);
+            this.Controls.Add(this.ground);
             this.Name = "Form1";
             this.Text = "Flappy Birds";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);

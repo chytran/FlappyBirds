@@ -36,7 +36,7 @@ namespace FlappyBirds
             Bird.Top += gravity;
             PipeBottom.Left -= pipeSpeed;
             PipeTop.Left -= pipeSpeed;
-            scoreText.Text = score.ToString();
+            scoreText.Text = "Score: " + score.ToString();
 
             if(PipeBottom.Left < -150)
             {
@@ -49,13 +49,26 @@ namespace FlappyBirds
                 PipeTop.Left = 950;
                 score++;
             }
+
+            if(Bird.Bounds.IntersectsWith(PipeBottom.Bounds) || 
+                Bird.Bounds.IntersectsWith(PipeTop.Bounds) ||
+                Bird.Bounds.IntersectsWith(ground.Bounds) 
+                )
+                {
+                    endGame();
+                }
+
+            if(score > 5)
+            {
+                pipeSpeed = 15;
+            }
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Space)
             {
-                gravity = -5;
+                gravity = -10;
             }
         }
 
@@ -63,11 +76,17 @@ namespace FlappyBirds
         {
             if(e.KeyCode == Keys.Space)
             {
-                gravity = 5;
+                gravity = 10;
             }
         }
 
         private void endGame()
+        {
+            gameTimer.Stop();
+            scoreText.Text += " Game Over!";
+        }
+
+        private void scoreText_Click(object sender, EventArgs e)
         {
 
         }
